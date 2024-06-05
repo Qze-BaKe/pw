@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BZY.千鹤少年 - 简介</title>
+  <link rel="stylesheet" href="normal.css">
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">BZY</a>
+    <ul>
+      <li><a href="../index.html"active">主页</a></li>
+      <li><a href="#">导航栏</a></li>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </header>
+  <section>
+    <img src="image/stars.png" id="stars">
+    <img src="image/moon.png" id="moon">
+    <img src="image/mountains_behind.png" id="mountains_behind">
+    <h2 id="text">BZY.千鹤少年</h2>
+    <a href="#sec" id="btn">简介</a>
+    <img src="image/mountains_front.png" id="mountains_front">
+  </section>
+  <div class="sec" id="sec">
+    <h2>关于我</h2>
+    <p>
+      BZY.千鹤少年，2006出生于浙江杭州，
+    </p>
+  </div>
+
+  <script>
+    let stars = document.getElementById('stars')
+    let moon = document.getElementById('moon')
+    let mountains_behind = document.getElementById('mountains_behind')
+    let text = document.getElementById('text')
+    let btn = document.getElementById('btn')
+    let mountains_front = document.getElementById('mountains_front')
+    let header = document.querySelector('header')
+
+    window.addEventListener('scroll', function(){
+      let value = window.scrollY;
+      stars.style.left = value * 0.25 + 'px'
+      moon.style.top = value * 1.05 + 'px'
+      mountains_behind.style.top = value * 0.5 + 'px'
+      mountains_front.style.top = value * 0 + 'px'
+      text.style.marginRight = value * 4 + 'px'
+      text.style.marginTop = value * 1.5 + 'px'
+      btn.style.marginTop = value * 1.5 + 'px'
+      header.style.top = value * 0.5 + 'px'
+    })
+  </script>
+  <script src="https://unpkg.com/smoothscroll-polyfill@1.0.4/dist/smoothscroll-polyfill.min.js"></script>
+  <script>
+    // Polyfill初始化
+    smoothscroll.polyfill();
+  </script>
+</body>
+</html>
